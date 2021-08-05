@@ -1,0 +1,75 @@
+//sap xep mang tang dan va giam dan
+
+#include <iostream>
+using namespace std;
+
+void increasingArraySort(int arr[],int n) {
+	int temp;
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = i + 1 ; j < n; j++) {
+			if (arr[i] > arr[j]) {
+				temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+	cout << "> Sap xep mang theo thu tu tang dan:  ";
+	for (int i = 0; i < n; i++) {
+		cout << arr[i] << "  ";
+	}
+}
+
+void decreasingArraySort(int arr[], int n) {
+	int temp;
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (arr [i] < arr[j]) {
+				temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+	cout << "> Sap xep mang theo thu tu giam dan:  ";
+	for (int i = 0; i < n; i++) {
+		cout << arr[i] << "  ";
+	}
+	cout << endl;
+}
+
+int main() {
+	int n;
+	cout << "> Nhap N: ";
+	cin >> n;
+	
+	int arr[n];
+	
+	if (n <= 0) {
+		cout << "> Mang khong co phan tu nao de thuc hien chuong trinh!!!";
+	} else if (n == 1) {
+		cout << endl << "> Nhap phan tu duy nhat cua mang: ";
+		cin >> arr[0];
+		cout << endl;
+		increasingArraySort(arr, n);
+		cout << endl << endl;
+		decreasingArraySort(arr, n);
+	} else {
+		cout << endl;
+		for (int i = 0; i < n; i++) {
+			cout << "> Nhap phan tu thu " << i + 1 << ": ";
+			cin >> arr[i];
+		}
+		cout << endl;
+		increasingArraySort(arr, n);
+		cout << endl << endl;
+		decreasingArraySort(arr, n);
+	}
+	
+//	increasingArraySort(arr, n);
+//	cout << endl;
+//	decreasingArraySort(arr, n);
+
+	return 0;
+}
+

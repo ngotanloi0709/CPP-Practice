@@ -1,0 +1,38 @@
+//Liet ke so nguyen to < N(input)
+//So nguyen to la so chi chia het cho mot va chinh no
+//2 truong hop khong duoc xet la so nguyen to la 0 va 1
+
+#include <iostream> 
+using namespace std;
+
+void primeNumberPrint(int n) {
+	int count = 0;
+	
+	if (n <= 1) {
+		cout << "> " << n << " khong phai la so nguyen to!!!";
+	} else {
+		cout << "> Cac so nguyen to nho hon " << n << " la: ";
+		for (int i = 2; i < n; i++) {
+			for (int j = 1; j <= i; j++) {
+				if (i % j == 0){
+					count++;
+				}
+			}
+			if (count == 2) {
+				cout << i << "  ";
+			}
+			count = 0;
+		}
+	}
+}
+
+
+int main() {
+	//int n = 30; // default input value
+	int n;
+	cout << "> Nhap N: ";
+	cin >> n;
+	
+	primeNumberPrint(n);
+	return 0;
+}

@@ -1,0 +1,31 @@
+//tach cac chu so thuoc hang tram hang chuc va hang don vi ( so co 3 chu so )
+//input 123
+//output tram 1 chuc 2 don vi 3
+			
+
+#include <iostream>
+using namespace std;
+
+void splitNumber(int n) {
+	cout <<"> Hang tram: " << n / 100 << endl;
+	cout <<"> Hang chuc: " << ((n % 100) / 10) << endl;
+	cout <<"> Hang don vi: " << ((n % 100) % 10) << endl;
+}
+
+int main() {
+	int n;
+	
+	cout << "> Nhap so  nguyen co 3 chu so can tach: ";
+	cin >> n;
+	
+	
+	while ((n / 1000 >= 1)) {
+		system("cls");
+		cout << "> Ban vua nhap so lon hon 3 chu so!! Vui long nhap lai!!" << endl;
+		cout << "> Nhap so co 3 chu so can tach: ";
+		cin >> n;
+	} 
+	
+	splitNumber(n);
+	return 0;
+}

@@ -1,0 +1,76 @@
+// bai tap giai phuong trinh bac nhat va bac hai
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void giaiPhuongtrinhBacNhat(float a, float b) {
+	cout << -b / a;
+}
+
+void giaiPhuongTrinhBacHai(float a, float b, float c) {
+	float delta = b*b - (4 * a * c);
+	float x1 = (-b + sqrt(delta))/(2*a);
+	float x2 = (-b - sqrt(delta))/(2*a);
+	
+	if (delta < 0) {
+		cout << "> Phuong trinh Vo Nghiem!!!";
+	} else if ( delta == 0) {
+		cout << "> Phuong trinh co 2 Nghiem kep la: " << -b / 2*a;
+	} else {
+		cout << "> Phuong trinh co 2 Nghiem phan biet la: " << endl;
+		cout << "> X1 = " << x1;
+		cout << "> X2 = " << x2;
+	}
+}
+
+int checkingChoice() {
+	int check = 0;
+	
+	cout << "> 1. Giai phuong trinh bac nhat." << endl;
+	cout << "> 2. Giai phuong trinh bac hai." << endl;
+	cout << "> Xin hay chon 1 hoac 2: ";
+	
+	cin >> check;
+	
+	while (!(check == 1 || check == 2)) {
+		system("cls");
+		
+		
+		if (!(check == 1 || check == 2)) {
+			cout << "> 1. Giai phuong trinh bac nhat." << endl;
+			cout << "> 2. Giai phuong trinh bac hai." << endl;
+			cout << "> Khong dung yeu cau vui long nhap lai!!!" << endl;
+			cout << "> ";
+		}
+		
+		cin >> check;
+	}
+	return check;
+}
+
+int main() {
+	int check = checkingChoice();
+	
+	float a, b, c;
+	
+	switch (check) {
+		case 1:
+			cout << "> Nhap a: ";
+			cin >> a;
+			cout << "> Nhap b: ";
+			cin >> b;
+			giaiPhuongtrinhBacNhat(a, b);
+			break;
+		case 2:
+			cout << "> Nhap a: ";
+			cin >> a;
+			cout << "> Nhap b: ";
+			cin >> b;
+			cout << "> Nhap c: ";
+			cin >> c;
+			giaiPhuongTrinhBacHai(a, b, c);
+			break;
+	}
+	return 0;
+}

@@ -1,0 +1,35 @@
+//in ra day fibonacci < N(input)
+
+#include <iostream>
+using namespace std;
+
+void fiboPrint(int n) {
+	int x = 0; // gia tri fibo -2
+	int y = 1; // gia tri fobo -1
+	int z; // gia tri fibo 
+	
+	if (n < 2){
+		cout << "> Khong co gia tri Fibonacci nao nho hon " << n;
+	} else if (n == 2) {
+		cout << "> Day Fibonacci nho hon 2 la: 1  1";
+	} else {
+		cout << "> Day Fibonacci nho hon " << n << " la: 1  ";
+		do {
+			cout << z << "  ";
+			x = y;
+			y = z;
+			z = x + y; 
+		} while (z < n);
+	}
+}
+
+
+int main() {
+	//int n = 100; //cheking input default value
+	int n;
+	cout << "> Nhap N: ";
+	cin >> n;
+	
+	fiboPrint(n);
+	return 0;
+}

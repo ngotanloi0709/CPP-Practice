@@ -1,0 +1,59 @@
+//Viet chuong trinh kiem tra vi tri x(input) trong mang da nhap vao
+//1   2   3   4   5   6 (array)
+//3	  7	  6	  3	  9	  3
+
+//input x = 3
+//output 1 4 6
+
+#include <iostream>
+using namespace std;
+
+void ArrayPositionChecking(int arr[], int n, int x) {
+	int count = 0;
+	for (int i = 0; i < n; i++) {
+		if (arr[i] == x) {
+			count++;
+		}
+	} 
+	if (count == 0) {
+		cout << "> Phan tu khong xuat hien trong mang!!!";
+	} else {
+		cout << "> Phan tu " << x << " xuat hien tai vi tri:  ";
+	
+		for (int i = 0; i < n; i++) {
+			if (arr[i] == x) {
+				cout << i + 1 << "  ";
+			}
+		}
+	}
+}
+
+int main() {
+	int x;
+	
+	int n;
+	cout << "> Nhap so phan tu cua mang: ";
+	cin >> n;
+	
+	int arr[n];
+	
+	if (n <= 0) {
+		cout << "> Mang khong co phan tu de chay chuong trinh!!!";
+	} else if ( n == 1) {
+		cout << "> Nhap phan tu duy nhat cua mang: ";
+		cin >> arr[0];
+		cout << "> Nhap phan tu muon kiem tra: ";
+		cin >> x;
+		ArrayPositionChecking(arr, n, x);
+	} else { 
+		for (int i = 0; i < n; i++) {
+			cout << "> Nhap phan tu thu " << i + 1 << ": ";
+			cin >> arr[i];
+		}
+		cout << "> Nhap phan tu muon kiem tra: ";
+		cin >> x;
+		ArrayPositionChecking(arr, n, x);
+	}
+	
+	return 0;
+}

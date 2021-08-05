@@ -1,0 +1,55 @@
+//kiem tra su ton tai cua mot tam giac sau do kiem tra xem do la loai tam giac gi
+//input: 3 so nguyen duong
+//dieu kien: tong 2 canh bat ki > canh con lai
+
+//tam giac vuong thi dung pitago
+//tam giac deu co 3 canh bang nhau
+//tam giac can co 2 canh bang nhau
+//tam giac tu co mot goc > 90 do => (a*a>b*b+c*c||b*b>a*a+c*c||c*c >a*a+b*b)
+
+#include <iostream>
+using namespace std;
+
+bool triangleChecking(float a, float b, float c) {
+	if (a + b > c && a + c > b && b + c > a) {
+		cout << "> Day la mot tam giac!" << endl;
+		return true;
+	} else {
+		cout << "> Day khong phai la mot tam giac!";
+		return false;
+	}
+}
+
+void triangleKindChecking(float a, float b, float c) {
+	if (a * a == b * b + c * c || b * b == a * a + c * c || c*c== a*a+b*b){
+		cout << "> Day la tam giac Vuong.";
+	} else if (a == b && b == c) {
+		cout << "> Day la tam giac Deu.";
+	} else if (a == b || a == c || b == c) {
+		cout << "> Day la tam giac Can.";
+	} else if (a * a > b * b + c * c || b * b > a * a + c * c || c * c > a * a + b * b) {
+		cout << "> Day la tam giac Tu.";
+	} else {
+		cout << "> Day la tam giac Nhon";	
+	}
+}
+
+int main() {
+	int a, b, c;
+	
+	cout << "> Nhap 3 canh cua tam giac muon kiem tra: " << endl;
+	cout << "> Nhap a: ";
+	cin >> a;
+	cout << "> Nhap b: ";
+	cin >> b;
+	cout << "> Nhap a: ";
+	cin >> c;
+	
+	int check = triangleChecking(a, b, c);
+	
+	if (check ==  1) {
+		triangleKindChecking(a, b, c);
+	}	
+	
+	return 0;
+}

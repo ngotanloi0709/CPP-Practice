@@ -1,0 +1,49 @@
+//in ra phan tu am cua mang 
+
+#include <iostream>	
+using namespace std;
+
+void negativeNumberFilter(int arr[],int  n) {
+	int count = 0;
+	
+	for (int i = 0; i < n; i++) {
+		if (arr[i] < 0) {
+			count++;
+		}
+	}
+	
+	if (count == 0) {
+		cout << "> Trong mang khong co phan tu am!!";
+	} else {
+		cout << "> Trong mang co " << count << " phan tu am:  ";
+		for (int i = 0; i < n; i++) {
+			if (arr[i] < 0) {
+				cout << arr[i] << "  ";
+			}
+		}
+	}
+}
+
+int main() {
+	int n;
+	cout << "> Nhap so phan tu cua mang: ";
+	cin >> n;
+	
+	int arr[n];
+	
+	if (n == 0) {
+		cout << "> Mang khong co phan tu nao de thuc hien chuong trinh!!!";
+	} else if (n == 1) {
+		cout << "> Nhap phan tu duy nhat cua mang: ";
+		cin >> arr[0];
+		negativeNumberFilter(arr, n);
+	} else {
+		for (int i = 0; i < n; i++) {
+			cout << "> Nhap phan tu thu " << i + 1 << " cua mang: ";
+			cin >> arr[i];
+		}
+		negativeNumberFilter(arr, n);
+	}
+	
+	return 0;
+}

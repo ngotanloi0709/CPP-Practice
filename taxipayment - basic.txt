@@ -1,0 +1,33 @@
+//chuong trinh tinh cuoc taxi
+// Km dau tien la 5000d
+//30 km tiep theo la 4000d
+//neu lon hon 31 km thi moi km them phai tra la 3000
+//input: km
+//output: payment
+
+#include <iostream>
+using namespace std;
+
+void taxiPayment(int n) {
+	int fee = 5000;
+	
+	if (n == 0) {
+		fee = 0;
+	} else if (n <= 31) {
+		fee = fee + ( n - 1) * 4000;
+	} else {
+		fee = fee + 30 * 4000 + (n - 31) * 3000; 
+	}
+	
+	cout << "> So tien phai tra la: " << fee << "vnd";
+}
+
+
+int main() {
+	int n;
+	cout << "> Nhap so km da di chuyen: ";
+	cin >> n;
+	
+	taxiPayment(n);
+	return 0;
+}

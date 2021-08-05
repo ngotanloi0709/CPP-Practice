@@ -1,0 +1,80 @@
+// tim vi tri phan tu nho nhat va lon nhat trong mang
+// ko dung toan tu co san cua c++ :#
+#include <iostream>
+using namespace std;
+
+int arrayMaxChecking(int arr[], int n) {
+	int max = arr[0];
+	for (int i = 0; i < n - 1; i++) {
+		if (arr[i] < arr[i + 1] ) {
+			max = arr[i + 1];
+		}
+	}
+	return max;	
+}
+
+int arrayMinChecking(int arr[], int n) {
+	int min = arr[0];
+	for (int i = 0; i < n - 1; i ++) {
+		if (arr[i] > arr[i + 1]) {
+			min = arr[i + 1];
+		}
+	}
+	return min;
+}
+
+void arrayMinMaxPositionChecking(int arr[], int n, int min, int max) {
+	cout << "> Gia tri lon nhat trong mang la " << max << " va no xuat hien o vi tri:  ";
+	for (int i = 0; i < n; i++) {
+		if (arr[i] == max) {
+			cout << i + 1 << "  " << endl << endl;
+		}
+	}
+	
+	cout << "> Gia tri nho nhat trong mang la " << min << " va no xuat hien o vi tri:  ";
+	for (int i = 0; i < n; i++) {
+		if (arr[i] == min) {
+			cout << i + 1 << "  ";
+		}
+	}
+}
+
+
+
+
+int main() {
+	int max; 
+	int min;
+	
+	int n;
+	cout << "> Nhap so phan tu cua mang: ";
+	cin >> n;
+	cout << endl;
+	
+	int arr[n];
+	
+	if (n <= 0) {
+		cout << "> Mang khong co phan tu nao de thuc hien chuong trinh!!!";
+	} else if (n == 1) {
+		cout << "> Nhap phan tu duy nhat cua mang: ";
+		cin >> arr[0];
+		cout << endl;
+		max = arrayMaxChecking(arr, n);
+		min = arrayMinChecking(arr, n);
+		arrayMinMaxPositionChecking(arr, n, min, max);
+		//
+	} else {
+		for (int i = 0; i < n; i++) {
+			cout << "> Nhap phan tu thu " << i + 1 << " cua mang: ";
+			cin >> arr[i];
+		}
+		cout << endl;
+		max = arrayMaxChecking(arr, n);
+		min = arrayMinChecking(arr, n);
+		arrayMinMaxPositionChecking(arr, n, min, max);
+		//
+	}
+	return 0;
+}
+
+//arrayMinMaxPositionChecking(arr, n, min, max);

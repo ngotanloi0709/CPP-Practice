@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+
+//xay dung ham chuyen doi giua do f va do c
+void ftoc(float f) {
+	float s = (5 * (f - 32)) / 9;// chuyen doi tu do F sang do C
+	cout << "Do C: " << s;
+} 
+
+void ctof(float c) {
+	float s = 1.8 * c + 32;// chuyen doi tu do C sang do F
+	cout << "Do F: " << s;
+}
+
+
+
+int checkingChoice() {
+	int check = 1;
+	
+	do {
+		system("cls");
+		
+		cout << "1.Chuyen tu do C sang do F" << endl;
+		cout << "2.Chuyen tu do F sang do C" << endl << endl;
+		
+		if (!(check == 1 || check == 2)) {
+			cout << "<!> Khong dung yeu cau! Vui long nhap lai." << endl <<endl;
+		}
+		
+		cout << "> ";
+		cin >> check;
+	} while (!(check == 1 || check == 2));
+	
+	return check;
+}
+
+
+//chuong trinh chinh
+int main() {
+	int check = checkingChoice();
+	float temperature;
+	cout << "> Nhap nhiet do: ";
+	cin >> temperature;
+	switch (check) {
+		case 1:
+			ctof(temperature);
+			break;
+		case 2:
+			ftoc(temperature);
+			break;
+	}
+	return 0;
+}
