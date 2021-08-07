@@ -10,9 +10,13 @@ void numberCounting(int n) {
 	int test = 1;
 	int count = 0;
 	
-	while (abs(n) / test >= 1) {
-		count = count + 1;
-		test = test * 10;
+	if (n == 0) {
+		count = 1;
+	} else {
+		while (abs(n) / test >= 1) {
+			count = count + 1;
+			test = test * 10;
+		}
 	}
 	cout << "> "<< n << " la so co " << count << " chu so!!!";
 }
