@@ -1,4 +1,4 @@
-//selectionSort(increasing) Demonstration
+//interchangeSort(increasing) Demonstration
 
 #include <iostream>
 using namespace std;
