@@ -1,0 +1,13 @@
+Viết chương trình thực hiện các yêu cầu sau trên danh sách liên kết đơn Quản lý các nhân viên:
+
+a/ Khai báo cấu trúc dữ liệu của dslk đơn các nhân viên, biết rằng thông tin của một nhân viên: Mã số nhân viên (kiểu ký tự), họ tên nhân viên (30 ký tự), ngày sinh (kiểu ngày), lương (số thực), giới tính (0: nữ, 1: nam).
+
+b/ Viết hàm nhập thông tin nhân viên theo phương pháp thêm vào đầu danh sách.
+
+c/ Liệt kê tên các nhân viên năm sinh nhỏ hơn hoặc bằng 1980.
+
+d/ Đếm số lượng nhân viên có lương lớn hơn 10 triệu đồng.
+
+e/ Xoá một nhân viên có mã số bằng x, x nhập từ bàn phím, nếu không có thì thông báo là không có.
+
+f/ Sắp xếp các nhân viên giảm dần theo năm sinh (không quan tâm ngày và tháng).
